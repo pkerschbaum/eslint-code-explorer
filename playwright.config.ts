@@ -13,14 +13,18 @@ export default defineConfig({
 	use: {
 		baseURL: "http://127.0.0.1:5173",
 
-		/* Capture trace and video on first retry (retries are only done in CI) */
+		// ensure consistent timezone and locale
+		timezoneId: "America/Los_Angeles",
+		locale: "en-US",
+
+		// capture trace and video on first retry (retries are only done in CI)
 		trace: "on-first-retry",
 		video: "on-first-retry",
 	},
 
 	expect: {
 		toHaveScreenshot: {
-			/* Screenshots are never exactly the same for various reasons - allow a small amount of pixel difference */
+			// screenshots are never exactly the same for various reasons - allow a small amount of pixel difference
 			maxDiffPixelRatio: 0.05,
 		},
 	},
@@ -28,7 +32,11 @@ export default defineConfig({
 	projects: [
 		{
 			name: "chromium",
-			use: { ...devices["Desktop Chrome"] },
+			use: {
+				...devices["Desktop Chrome"],
+				// opt into "New Headless" chromium (https://playwright.dev/docs/browsers#chromium-new-headless-mode, https://developer.chrome.com/docs/chromium/headless)
+				channel: "chromium",
+			},
 		},
 		{
 			name: "firefox",
