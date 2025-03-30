@@ -28,6 +28,7 @@ Open [http://localhost:5173](http://localhost:5173) with your browser to see the
 
 -   `npm run start`: Starts the development server.
 -   `npm run build`: Builds the app for production.
+-   `npm run test:e2e:update`: Runs all End-to-End tests and updates the screenshots/snapshots.
 
 ## Configuration
 
