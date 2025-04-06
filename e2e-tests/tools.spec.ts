@@ -4,7 +4,7 @@ test("should switch to each tool and show it", async ({ page }) => {
 	await page.goto("/");
 
 	await expect(
-		page.getByRole("region", { name: "Code Analysis Tools" }),
+		page.getByRole("region", { name: "Code Analysis Tools Panel" }),
 	).toHaveScreenshot("tools-ast.png");
 
 	await page.getByRole("button", { name: "Scope" }).click();
@@ -13,12 +13,12 @@ test("should switch to each tool and show it", async ({ page }) => {
 	await page.mouse.move(0, 0);
 
 	await expect(
-		page.getByRole("region", { name: "Code Analysis Tools" }),
+		page.getByRole("region", { name: "Code Analysis Tools Panel" }),
 	).toHaveScreenshot("tools-scope.png");
 
 	await page.getByRole("button", { name: "Code Path" }).click();
 
 	await expect(
-		page.getByRole("region", { name: "Code Analysis Tools" }),
+		page.getByRole("region", { name: "Code Analysis Tools Panel" }),
 	).toHaveScreenshot("tools-code-path.png");
 });

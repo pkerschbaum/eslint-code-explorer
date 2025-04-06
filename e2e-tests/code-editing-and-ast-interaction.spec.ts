@@ -7,7 +7,7 @@ test(`should change code, then highlight code and AST nodes matching ESQuery sel
 
 	// focus code editor textbox
 	await page
-		.getByRole("region", { name: "Code Editor" })
+		.getByRole("region", { name: "Code Editor Panel" })
 		.getByRole("textbox")
 		.nth(1)
 		.click();

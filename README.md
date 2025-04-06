@@ -13,6 +13,7 @@ To install and set up the project, follow these steps:
 1. Ensure you have Node.js v20 installed. You can download it from the [official Node.js website](https://nodejs.org/).
 2. Clone the repository to your local machine.
 3. Install the project dependencies using npm - `npm install`.
+4. Setup Docker to run E2E tests via Playwright ([Docker Desktop](https://www.docker.com/products/docker-desktop/) or [Docker Engine](https://docs.docker.com/engine/install/)).
 
 This will install all the necessary packages and dependencies required to run the project.
 

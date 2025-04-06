@@ -31,7 +31,7 @@ function App() {
 									defaultSize={50}
 									minSize={25}
 									role="region"
-									aria-label="Code Editor"
+									aria-label="Code Editor Panel"
 								>
 									<EsquerySelectorInput />
 									<Editor
@@ -56,7 +56,7 @@ function App() {
 									defaultSize={50}
 									minSize={25}
 									role="region"
-									aria-label="Code Analysis Tools"
+									aria-label="Code Analysis Tools Panel"
 								>
 									<div className="bg-muted overflow-auto h-[70dvh] sm:h-full relative flex flex-col">
 										<div className="flex sm:items-center flex-col sm:flex-row justify-between p-4 gap-2 z-10">
