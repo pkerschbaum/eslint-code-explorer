@@ -11,7 +11,7 @@ export default defineConfig({
 	reporter: process.env.CI ? [["html"], ["github"]] : "html",
 
 	use: {
-		baseURL: "http://127.0.0.1:5173",
+		baseURL: `http://${process.env.CI ? "localhost" : "host.docker.internal"}:5173`,
 
 		// ensure consistent timezone and locale
 		timezoneId: "America/Los_Angeles",
@@ -48,9 +48,22 @@ export default defineConfig({
 		},
 	],
 
-	webServer: {
-		command: "npm run start",
-		url: "http://127.0.0.1:5173",
-		reuseExistingServer: !process.env.CI,
-	},
+	webServer: [
+		{
+			command: `docker run ${process.env.CI ? "--network host" : "--add-host=host.docker.internal:host-gateway"} -p 3000:3000 --rm --init --workdir /home/pwuser --user pwuser mcr.microsoft.com/playwright:v1.51.1-noble /bin/sh -c "npx -y playwright@1.51.1 run-server --port 3000 --host 0.0.0.0"`,
+			url: "http://127.0.0.1:3000/",
+			stdout: "pipe",
+			stderr: "pipe",
+			gracefulShutdown: {
+				signal: "SIGTERM",
+				timeout: 10_000,
+			},
+			reuseExistingServer: !process.env.CI,
+		},
+		{
+			command: "npm run start",
+			url: "http://127.0.0.1:5173",
+			reuseExistingServer: !process.env.CI,
+		},
+	],
 });

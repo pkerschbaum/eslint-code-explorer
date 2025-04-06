@@ -19,7 +19,7 @@ export default defineConfig({
 		"process.env.NODE_DEBUG": JSON.stringify(process.env.NODE_DEBUG),
 	},
 	server: {
-		// accept connections on 127.0.0.1 because "localhost" is not resolved correctly by Playwright in CI
-		host: "127.0.0.1",
+		// accept connections from everywhere because Playwright browsers run from within a Docker container which has some random IP
+		host: "0.0.0.0",
 	},
 });
