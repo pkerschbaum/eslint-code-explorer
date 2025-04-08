@@ -16,12 +16,21 @@ jobs:
 
             - name: Set up Node.js
               uses: actions/setup-node@v4
+              with:
+                  node-version-file: ".nvmrc"
+                  cache: pnpm
 
-            - name: Install npm packages
-              run: npm install
+            - name: Install corepack@0.31.0 and pnpm
+              run: |
+                  npm install -g corepack@0.31.0
+                  corepack enable pnpm
+                  pnpm --version
+
+            - name: Install dependencies
+              run: pnpm install --frozen-lockfile
 
             - name: Update README with latest sponsor data
-              run: npm run build:readme
+              run: pnpm run build:readme
 
             - name: Setup Git
               run: |
