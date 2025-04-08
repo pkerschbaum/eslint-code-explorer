@@ -187,13 +187,13 @@ export const Options: FC = () => {
 						alt={currentLanguage.label}
 						width={16}
 						height={16}
-						className="w-4 h-4"
+						className="h-4 w-4"
 					/>
 					<span>{currentLanguage.label}</span>
 					<Settings className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all" />
 				</Button>
 			</PopoverTrigger>
-			<PopoverContent className="space-y-4 w-[372px]">
+			<PopoverContent className="w-[372px] space-y-4">
 				<LabeledSelect
 					id="language"
 					label="Language"

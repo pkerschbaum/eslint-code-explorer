@@ -24,17 +24,17 @@ export const PathViewMode: FC = () => {
 			type="single"
 			value={pathView}
 			onValueChange={handleValueChange}
-			className="border rounded-md"
+			className="rounded-md border"
 		>
 			{pathViewOptions.map(option => (
 				<ToggleGroupItem
 					key={option.value}
 					value={option.value}
 					className={cn(
-						"border -m-px flex items-center gap-1.5",
+						"-m-px flex items-center gap-1.5 border",
 						option.value === pathView
 							? "!bg-background"
-							: "border-transparent hover:bg-transparent text-muted-foreground",
+							: "border-transparent text-muted-foreground hover:bg-transparent",
 					)}
 				>
 					<option.icon size={16} />

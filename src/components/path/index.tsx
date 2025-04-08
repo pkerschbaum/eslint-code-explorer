@@ -72,7 +72,7 @@ export const CodePath: FC = () => {
 
 	if (error) {
 		return (
-			<div className="bg-red-50 dark:bg-gray-900 pl-1.5 pt-1.5 h-full">
+			<div className="h-full bg-red-50 pl-1.5 pt-1.5 dark:bg-gray-900">
 				<div className="p-4 text-red-600 dark:text-red-400">
 					Error: {error}
 				</div>
@@ -93,7 +93,7 @@ export const CodePath: FC = () => {
 	return (
 		<>
 			<svg
-				className="absolute w-full h-full select-none pointer-events-none z-0"
+				className="pointer-events-none absolute z-0 h-full w-full select-none"
 				data-testid="rf__background"
 				aria-label="Canvas background"
 			>

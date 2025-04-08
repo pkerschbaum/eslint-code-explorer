@@ -43,7 +43,7 @@ export const withErrorBoundary = (Children: FC) => {
 
 export const ErrorState = ({ message }: { message: string }) => {
 	return (
-		<div className="bg-red-50 dark:bg-gray-800 pl-1.5 pt-1.5 h-full">
+		<div className="h-full bg-red-50 pl-1.5 pt-1.5 dark:bg-gray-800">
 			<div className="p-4 text-red-600 dark:text-red-400">
 				Error: {message}
 			</div>

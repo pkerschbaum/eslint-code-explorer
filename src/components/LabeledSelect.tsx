@@ -58,7 +58,7 @@ const LabeledSelect = (props: PanelProps) => {
 										alt={item.label}
 										width={16}
 										height={16}
-										className="w-4 h-4"
+										className="h-4 w-4"
 									/>
 									<span>{item.label}</span>
 								</div>

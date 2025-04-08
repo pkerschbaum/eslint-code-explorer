@@ -5,7 +5,7 @@ import type { FC } from "react";
 
 export const Navbar: FC = () => (
 	<nav className="border-t-4 border-primary">
-		<div className="px-6 py-4 flex items-center justify-between text-xl font-semibold">
+		<div className="flex items-center justify-between px-6 py-4 text-xl font-semibold">
 			<div className="flex items-center gap-1.5">
 				<a
 					href="https://eslint.org/"
@@ -18,8 +18,8 @@ export const Navbar: FC = () => (
 						width={32}
 						height={32}
 					/>
-					<p className="hidden sm:block ml-1">ESLint</p>
-					<p className="hidden sm:block text-muted-foreground ml-1">
+					<p className="ml-1 hidden sm:block">ESLint</p>
+					<p className="ml-1 hidden text-muted-foreground sm:block">
 						Code Explorer
 					</p>
 				</a>

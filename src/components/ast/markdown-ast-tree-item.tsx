@@ -29,14 +29,14 @@ export const MarkdownAstTreeItem: FC<MarkdownAstTreeItemProperties> = ({
 		<AccordionItem
 			value={`${index}-${data.type}`}
 			className={cn(
-				"border border-card rounded-lg overflow-hidden",
-				isEsqueryMatchedNode && "border-primary border-4",
+				"overflow-hidden rounded-lg border border-card",
+				isEsqueryMatchedNode && "border-4 border-primary",
 			)}
 		>
-			<AccordionTrigger className="text-sm bg-card px-4 py-3 capitalize">
+			<AccordionTrigger className="bg-card px-4 py-3 text-sm capitalize">
 				{data.type}
 			</AccordionTrigger>
-			<AccordionContent className="p-4 border-t">
+			<AccordionContent className="border-t p-4">
 				<ul className="space-y-1">
 					{Object.entries(data).map(item => (
 						<TreeEntry

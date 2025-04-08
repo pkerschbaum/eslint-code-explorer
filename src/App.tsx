@@ -18,14 +18,14 @@ function App() {
 	const activeTool = tools.find(({ value }) => value === tool) ?? tools[0];
 	return (
 		<ThemeProvider>
-			<div className="antialiased touch-manipulation font-sans">
-				<div className="flex flex-col h-screen">
+			<div className="touch-manipulation font-sans antialiased">
+				<div className="flex h-screen flex-col">
 					<Navbar />
 					<div className="h-full overflow-hidden">
-						<div className="border-t h-full">
+						<div className="h-full border-t">
 							<PanelGroup
 								direction="horizontal"
-								className="border-t h-full"
+								className="h-full border-t"
 							>
 								<Panel
 									defaultSize={50}
@@ -51,15 +51,15 @@ function App() {
 										}}
 									/>
 								</Panel>
-								<PanelResizeHandle className="w-2 bg-gutter dark:bg-gray-600 bg-gray-200 bg-no-repeat bg-center" />
+								<PanelResizeHandle className="w-2 bg-gray-200 bg-gutter bg-center bg-no-repeat dark:bg-gray-600" />
 								<Panel
 									defaultSize={50}
 									minSize={25}
 									role="region"
 									aria-label="Code Analysis Tools Panel"
 								>
-									<div className="bg-muted overflow-auto h-[70dvh] sm:h-full relative flex flex-col">
-										<div className="flex sm:items-center flex-col sm:flex-row justify-between p-4 gap-2 z-10">
+									<div className="relative flex h-[70dvh] flex-col overflow-auto bg-muted sm:h-full">
+										<div className="z-10 flex flex-col justify-between gap-2 p-4 sm:flex-row sm:items-center">
 											<ToolSelector />
 											<div className="flex items-center gap-1">
 												{activeTool.options.map(

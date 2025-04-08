@@ -25,7 +25,7 @@ export const Wrap: FC = () => {
 			variant={wrap ? "outline" : "ghost"}
 			className={cn(
 				"flex items-center gap-2",
-				!wrap && "text-muted-foreground border border-transparent",
+				!wrap && "border border-transparent text-muted-foreground",
 			)}
 		>
 			<WrapTextIcon size={16} />

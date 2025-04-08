@@ -54,7 +54,7 @@ const SanitizeValue = ({
 		}
 
 		return (
-			<pre className="ml-8 max-h-44 bg-card border overflow-auto rounded-lg p-3">
+			<pre className="ml-8 max-h-44 overflow-auto rounded-lg border bg-card p-3">
 				{JSON.stringify(value, null, 2)}
 			</pre>
 		);
@@ -68,7 +68,7 @@ const SanitizeValue = ({
 		isProbablyNode(value)
 	) {
 		return (
-			<div className="mt-3 space-y-3 ml-6">
+			<div className="ml-6 mt-3 space-y-3">
 				<ScopeItem
 					path={path + "." + index}
 					isArray={isArray}
@@ -118,7 +118,7 @@ export const TreeEntry: FC<TreeEntryProperties> = ({
 						<Icon size={16} className="text-muted-foreground" />
 					</button>
 				) : (
-					<div className="w-4 h-4" />
+					<div className="h-4 w-4" />
 				)}
 				{key && <span>{key}</span>}
 				{renderValue(value).map((part, partIndex) => (

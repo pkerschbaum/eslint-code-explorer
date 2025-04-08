@@ -15,7 +15,7 @@ export const EsquerySelectorInput: FC = () => {
 		(!astParseResult.ok || astParseResult.esqueryMatchedNodes.length === 0);
 
 	return (
-		<div className="p-2 flex gap-1.5 items-center border-b">
+		<div className="flex items-center gap-1.5 border-b p-2">
 			<Label htmlFor={htmlId} className="whitespace-pre">
 				ESQuery Selector
 			</Label>

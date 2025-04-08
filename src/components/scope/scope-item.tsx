@@ -50,14 +50,14 @@ export const ScopeItem: FC<ScopeItemProperties> = ({
 		<AccordionItem
 			value={path + "." + index + "." + key}
 			className={cn(
-				"border border-card rounded-lg overflow-hidden",
-				isEsqueryMatchedNode && "border-primary border-4",
+				"overflow-hidden rounded-lg border border-card",
+				isEsqueryMatchedNode && "border-4 border-primary",
 			)}
 		>
-			<AccordionTrigger className="text-sm bg-card px-4 py-3 capitalize">
+			<AccordionTrigger className="bg-card px-4 py-3 text-sm capitalize">
 				{isArray && `${Math.max(index, 0)}.`} {key}
 			</AccordionTrigger>
-			<AccordionContent className="p-4 border-t">
+			<AccordionContent className="border-t p-4">
 				<ul className="space-y-1">
 					{properties.map((item, index) => (
 						<TreeEntry

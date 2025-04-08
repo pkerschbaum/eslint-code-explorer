@@ -31,7 +31,7 @@ export const JavascriptAst: FC = () => {
 		return (
 			<Accordion
 				type="multiple"
-				className="px-8 font-mono space-y-3"
+				className="space-y-3 px-8 font-mono"
 				defaultValue={["0-Program"]}
 			>
 				<JavascriptAstTreeItem
