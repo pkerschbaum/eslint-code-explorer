@@ -43,6 +43,7 @@ export function useAST() {
 		case "json": {
 			const { jsonMode } = jsonOptions;
 			const language = json.languages[jsonMode];
+			// @ts-expect-error -- TODO: type error revealed after switch to pnpm and update of some @eslint/* dependencies, solve it
 			astParseResult = language.parse({ body: code.json });
 			break;
 		}
@@ -50,6 +51,7 @@ export function useAST() {
 		case "markdown": {
 			const { markdownMode } = markdownOptions;
 			const language = markdown.languages[markdownMode];
+			// @ts-expect-error -- TODO: type error revealed after switch to pnpm and update of some @eslint/* dependencies, solve it
 			astParseResult = language.parse({ body: code.markdown });
 			break;
 		}
@@ -58,6 +60,7 @@ export function useAST() {
 			const { cssMode, tolerant } = cssOptions;
 			const language = css.languages[cssMode];
 			astParseResult = language.parse(
+				// @ts-expect-error -- TODO: type error revealed after switch to pnpm and update of some @eslint/* dependencies, solve it
 				{ body: code.css },
 				{ languageOptions: { tolerant } },
 			);
